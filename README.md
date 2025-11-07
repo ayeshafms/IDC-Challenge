@@ -30,4 +30,27 @@ This repository documents my progress as I complete daily SQL cahlleneges- to im
 - To sort the data in descending order, use the DESC keyword.
 - You can also sort by multiple columns — the data is first sorted by the first column, then by the second, and so on.
 
+#### DAY 4
+- The LIMIT clause returns the specified number of rows.
+- The OFFSET clause skips the specified number of rows and returns the remaining rows
+- When used together with the ORDER BY clause, LIMIT and OFFSET help retrieve a specific range of data — such as the top or bottom records in a dataset
+- Execution Order:
+  FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY → LIMIT
+
+#### DAY 5
+Aggregate functions are powerful tools that perform calculations across multiple rows and return a single value ; especially when combined with GROUP BY and HAVING clause
+
+🔍 Key Learnings:
+- Aggregate functions ignore null values except for COUNT()
+- The most commonly used SQL aggregate functions are:
+  + MIN() -> smallest value
+  + MAX() -> largest value
+  + COUNT() -> counts number of rows
+  + SUM() -> total of numeric values
+  + AVG() -> average of numeric values
+- Execution Order:
+  FROM → AGGREGATES → SELECT
+
+#### DAY 6
+
 

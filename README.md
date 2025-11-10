@@ -52,5 +52,18 @@ Aggregate functions are powerful tools that perform calculations across multiple
   FROM → AGGREGATES → SELECT
 
 #### DAY 6
+- GROUP BY groups rows into categories
+- All the aggregations are then calculated based on these categories
+- When combined with ORDER BY, it helps in sorting these categories in ASC/DESC order
+- Since aliases are created in the SELECT statement, they cannot be used in the GROUP BY clause
+  
+#### DAY 7
+- HAVING filters groups created by GROUP BY, similar to how WHERE filters rows.
+- WHERE: Filters rows before grouping 
+- HAVING: Filters groups after grouping 
+- WHERE: Cannot use aggregate functions 
+- HAVING: Can use aggregate functions
+- Execution Order:
+FROM -> WHERE -> GROUP BY -> HAVING -> SELECT -> ORDER BY -> LIMIT
 
 

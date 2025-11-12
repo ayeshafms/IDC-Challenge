@@ -38,9 +38,7 @@ This repository documents my progress as I complete daily SQL cahlleneges- to im
   FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY → LIMIT
 
 #### DAY 5
-Aggregate functions are powerful tools that perform calculations across multiple rows and return a single value ; especially when combined with GROUP BY and HAVING clause
-
-🔍 Key Learnings:
++ Aggregate functions are powerful tools that perform calculations across multiple rows and return a single value ; especially when combined with GROUP BY and HAVING clause
 - Aggregate functions ignore null values except for COUNT()
 - The most commonly used SQL aggregate functions are:
   + MIN() -> smallest value
@@ -66,4 +64,15 @@ Aggregate functions are powerful tools that perform calculations across multiple
 - Execution Order:
 FROM -> WHERE -> GROUP BY -> HAVING -> SELECT -> ORDER BY -> LIMIT
 
+#### DAY 8
+- Learned the types of SQL functions and their use cases
+- Explored categories of built-in functions
+- Practiced essential string functions such as CONCAT, TRIM, LENGTH, REPLACE, and REVERSE
+- Understood how to perform case-insensitive comparisons effectively
+- Understood how to combine string functions with CASE for complex logic
+
+#### DAY 9
+- Date functions are useful when working with dates and time in SQL.
+- They’re especially powerful for time-based analysis - like tracking durations, trends, or intervals.
+- Learned date functions such as DATEADD(), DATEDIFF(), CURDATE(), YEAR(), MONTH(), DATE() etc..
 

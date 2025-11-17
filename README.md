@@ -76,3 +76,25 @@ FROM -> WHERE -> GROUP BY -> HAVING -> SELECT -> ORDER BY -> LIMIT
 - They’re especially powerful for time-based analysis - like tracking durations, trends, or intervals.
 - Learned date functions such as DATEADD(), DATEDIFF(), CURDATE(), YEAR(), MONTH(), DATE() etc..
 
+#### DAY 10
+- A CASE expression adds conditional logic to your queries - just like using IF-THEN-ELSE in programming
+- It allows you to return different values based on specific conditions
+- All possible results must have the same data type (Eg: all text or all numbers)
+- SQL evaluates the conditions from top to bottom, so the order of conditions matters
+  
+#### DAY 11
+- DISTINCT removes duplicate rows from your result set, returning only unique values
+- Use COUNT(DISTINCT column) to count unique values within groups
+- DISTINCT with NULL: NULL values are considered equal, so only one NULL appears
+  
+#### DAY 12
+- NULL represents missing or unknown data in SQL. It’s not zero, not empty string, but the absence of a value
+- Empty string (’’) is NOT NULL - they’re different!
+- Some of the null functions include IS NULL, IS NOT NULL, COALESCE, IF NULL etc..
+  
+#### DAY 13
+- Having multiple tables in a database is highly necessary, as it solves issues such as data redundancy, update anomalies, deletion anomalies and unorganized data
+- These tables can then be combined using JOINS
+- JOINS combines rows from two or more tables into a single table based on common attributes (columns)
+- INNER JOIN returns only the rows that have matching values in both tables
+

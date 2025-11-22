@@ -1,0 +1,53 @@
+#DAY 14
+#PRACTICE
+#1.Join patients, staff, and staff_schedule to show patient service and staff availability.
+SELECT P.PATIENT_ID, P.NAME, 
+	   P.SERVICE, P.SATISFACTION,
+       S.STAFF_ID, S.STAFF_NAME, S.ROLE,
+       SW.PATIENTS_REQUEST, SW.PATIENTS_ADMITTED,
+       SW.PATIENTS_REFUSED, SW.STAFF_MORALE
+FROM PATIENTS P
+JOIN STAFF S
+ON P.SERVICE = S.SERVICE 
+JOIN SERVICES_WEEKLY SW
+ON S.SERVICE = SW.SERVICE;
+
+#2.Combine services_weekly with staff and staff_schedule for comprehensive service analysis.
+SELECT SW.PATIENTS_REQUEST, SW.PATIENTS_ADMITTED,
+       SW.PATIENTS_REFUSED, SW.STAFF_MORALE,
+       S.STAFF_ID, S.STAFF_NAME, S.ROLE,
+       SS.STAFF_NAME
+FROM SERVICES_WEEKLY SW
+JOIN STAFF S 
+ON SW.SERVICE = S.SERVICE 
+JOIN STAFF_SCHEDULE SS
+ON S.STAFF_ID = SS.STAFF_ID;
+
+#3.Create a multi-table report showing patient admissions with staff information.
+SELECT P.PATIENT_ID, P.NAME, 
+	   P.SERVICE, P.SATISFACTION,
+       S.STAFF_ID, S.STAFF_NAME, S.ROLE
+FROM PATIENTS P
+JOIN STAFF S 
+ON P.SERVICE = S.SERVICE;
+
+#DAILY
+#Create a comprehensive service analysis report for week 20 showing: service name, total patients admitted that week, total patients refused, average patient satisfaction, 
+#count of staff assigned to service, and count of staff present that week. Order by patients admitted descending.
+SELECT UPPER(SW.SERVICE) AS SERVICE, 
+       SW.PATIENTS_ADMITTED AS PATIENTS_ADMITTED,
+       SW.PATIENTS_REFUSED AS PATIENTS_REFUSED,
+       ROUND(SW.PATIENT_SATISFACTION, 2) AS AVG_SATISFACTION,
+       COUNT(DISTINCT SS.STAFF_ID) AS STAFF_ASSIGNED,
+       COUNT(DISTINCT CASE WHEN SS.PRESENT = 1 THEN SS.STAFF_ID END) AS STAFF_PRESENT
+FROM SERVICES_WEEKLY SW
+JOIN STAFF_SCHEDULE SS
+ON SW.SERVICE = SS.SERVICE
+WHERE SW.WEEK = '20'
+GROUP BY SW.SERVICE,
+		 SW.PATIENTS_ADMITTED,
+		 SW.PATIENTS_REFUSED,
+		 SW.PATIENT_SATISFACTION
+ORDER BY PATIENTS_ADMITTED DESC;
+       
+

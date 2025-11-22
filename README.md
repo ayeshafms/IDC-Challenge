@@ -98,3 +98,30 @@ FROM -> WHERE -> GROUP BY -> HAVING -> SELECT -> ORDER BY -> LIMIT
 - JOINS combines rows from two or more tables into a single table based on common attributes (columns)
 - INNER JOIN returns only the rows that have matching values in both tables
 
+#### DAY 14
+- INNER JOIN: Only matching rows from both tables 
+- LEFT JOIN: All rows from left table + matches from right (NULL if no match) - RIGHT JOIN: All rows from right table + matches from left (NULL if no match)
+- Use COALESCE with LEFT JOIN to handle NULLs
+- Find non-matching rows using WHERE column IS NULL
+
+#### DAY 15
+-Multiple joins combine data from three or more tables in a single query
+- Joins are evaluated left to right 
+- Results are cumulative (each join adds to the result set) 
+- Mix INNER and LEFT joins as needed
+
+#### DAY 16
+-Subqueries are queries nested inside other queries. In WHERE clauses, they filter based on results from another query
+- Single value: Returns one value (use =, <, >, etc.) 
+- Multiple values: Returns multiple values (use IN, NOT IN)
+- Test subqueries independently first to verify they return expected results
+
+#### DAY 17
+- Subqueries can also appear in SELECT (as calculated columns) and FROM (as derived tables).
+-Subquery in SELECT must return single value
+-Correlated subqueries in SELECT execute once per row (can be slow)
+
+#### DAY 18
+#### DAY 19
+#### DAY 20
+#### DAY 21

@@ -105,23 +105,57 @@ FROM -> WHERE -> GROUP BY -> HAVING -> SELECT -> ORDER BY -> LIMIT
 - Find non-matching rows using WHERE column IS NULL
 
 #### DAY 15
--Multiple joins combine data from three or more tables in a single query
+- Multiple joins combine data from three or more tables in a single query
 - Joins are evaluated left to right 
 - Results are cumulative (each join adds to the result set) 
 - Mix INNER and LEFT joins as needed
 
 #### DAY 16
--Subqueries are queries nested inside other queries. In WHERE clauses, they filter based on results from another query
+- Subqueries are queries nested inside other queries. In WHERE clauses, they filter based on results from another query
 - Single value: Returns one value (use =, <, >, etc.) 
 - Multiple values: Returns multiple values (use IN, NOT IN)
 - Test subqueries independently first to verify they return expected results
 
 #### DAY 17
 - Subqueries can also appear in SELECT (as calculated columns) and FROM (as derived tables).
--Subquery in SELECT must return single value
--Correlated subqueries in SELECT execute once per row (can be slow)
+- Subquery in SELECT must return single value
+- Correlated subqueries in SELECT execute once per row (can be slow)
 
-#### DAY 18
+####DAY 18
+- UNION combines results from multiple SELECT statements into a single result set.
+- UNION: Removes duplicate rows (slower) 
+- UNION ALL: Keeps all rows including duplicates (faster)
+- Use UNION ALL when possible - it’s faster since it doesn’t check for duplicates
+- Column names from first query are used when UNION is used.
+
 #### DAY 19
+- Window functions perform calculations across rows related to the current row, without collapsing results like GROUP BY.
+- ROW_NUMBER(): Sequential numbering (1, 2, 3, 4…) 
+- RANK(): Same values get same rank, gaps after ties (1, 2, 2, 4…) 
+- DENSE_RANK(): Same values get same rank, no gaps (1, 2, 2, 3…)
+  
 #### DAY 20
+- Running and Rolling Totals aggregate sequence of numbers and the aggregation is updated each time a number is added
+- Running Total aggregates all values from beginning up to the current point without dropping off older data
+- Rolling Total aggregates all values withing a fixed time window (E.g.: 30 Days). As new data is added, the oldest data point will be dropped
+  
 #### DAY 21
+- A Common Table Expression (CTE) temporary result set
+- WITH and AS clause are used in combination to create a CTE
+- Multiple CTE queries can be used within a single query
+- CTEs vs Subqueries: 
+ CTEs: More readable, can be referenced multiple times 
+ Subqueries: More concise for simple cases
+
+#### IDC CAPSTONE PROJECT - "WHO KILLED THE CEO?"
+Wrapped up the IDC SQL 21-Days Challenge by completing a capstone project titled - “Who Killed the CEO?”
+
+In this project, I was tasked with solving a fictional murder case entirely through SQL. All the clues were hidden across multiple company databases, including:
+- Keycard logs
+- Phone call records
+- Employee alibis
+- Evidence discovered in different rooms
+
+By analyzing each dataset, linking facts across tables and uncovering patterns, I was able to narrow down suspects and identify who killed the CEO
+
+It was a fun, challenging, and very practical way to apply SQL skills - especially joins, filtering, logical and analytical thinking.
